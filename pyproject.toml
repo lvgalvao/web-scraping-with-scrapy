@@ -10,6 +10,7 @@ packages = [{include = "web_scraping_with_scrapy"}]
 python = "^3.11"
 scrapy = "^2.9.0"
 ipython = "^8.13.2"
+mysql-connector-python = "^8.0.33"
 
 
 [tool.poetry.group.dev.dependencies]
