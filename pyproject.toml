@@ -8,6 +8,8 @@ packages = [{include = "web_scraping_with_scrapy"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
+scrapy = "^2.9.0"
+ipython = "^8.13.2"
 
 
 [tool.poetry.group.dev.dependencies]
