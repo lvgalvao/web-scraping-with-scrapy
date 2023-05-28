@@ -1,0 +1,37 @@
+[tool.poetry]
+name = "web-scraping-with-scrapy"
+version = "0.1.0"
+description = "The project focuses on leveraging the Scrapy framework, Python, and various techniques to efficiently scrape data from websites."
+authors = ["Luciano Filho <lvgalvaofilho@gmail.com>"]
+readme = "README.md"
+packages = [{include = "web_scraping_with_scrapy"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[tool.poetry.group.dev.dependencies]
+ipdb = "^0.13.13"
+pytest = "^7.3.1"
+pytest-cov = "^4.1.0"
+blue = "^0.9.1"
+isort = "^5.12.0"
+taskipy = "^1.11.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+pythonpath = "."
+addopts = "--doctest-modules" 
+
+[tool.isort]
+profile = "black"
+line_length = 79
+
+[tool.taskipy.tasks]
+lint = "blue . && isort ."
+docs = "mkdocs serve"
+test = "pytest -s -x --cov=code -vv"
+post_test = "coverage html"
